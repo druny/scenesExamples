@@ -1,0 +1,32 @@
+.mainView {
+  width: 100%;
+}
+
+.buttonContent {
+  padding: 0 50px;
+
+  &:hover {
+    & .buttonImageHover {
+      display: inline-block;
+    }
+
+    & .buttonImageDefault {
+      display: none;
+    }
+  }
+
+  & .buttonImageHover {
+    display: none;
+    vertical-align: middle;
+    margin-right: 6px;
+  }
+  & .buttonImageDefault {
+    vertical-align: middle;
+    margin-right: 6px;
+  }
+
+  & .buttonText {
+    display: inline-block;
+    vertical-align: middle;
+  }
+}

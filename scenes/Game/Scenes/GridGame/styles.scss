@@ -1,0 +1,14 @@
+.mainView {
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 33%);
+
+  background-color: rgba(1, 20, 48, 1);
+  -webkit-box-shadow: 0 3px 20px 3px rgba(10,17,17,.51);
+  box-shadow: 0 3px 20px 3px rgba(10,17,17,.51);
+
+  z-index: 0;
+}

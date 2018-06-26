@@ -1,0 +1,67 @@
+@import "../../../../styles/colors";
+
+.mainView {
+  border-right: 1px solid $primary-color;
+
+  height: 102px;
+  width: 148px;
+
+  -webkit-transform-origin: 100% 50% 0;
+  transform-origin: 100% 50% 0;
+  -webkit-animation: slide .65s ease;
+  animation: slide .65s ease;
+
+}
+@keyframes slide {
+  0%{
+    margin-left: -148px;
+    -webkit-transform:
+            perspective(800px)
+            rotateY(-90deg)
+            translateZ(0);
+    transform:
+            perspective(800px)
+            rotateY(-90deg)
+            translateZ(0);
+    opacity: 0;
+  }
+  to {
+    margin-left:0;
+    -webkit-transform:
+            perspective(800px)
+            rotateY(0deg)
+            translateZ(0);
+    transform:
+            perspective(800px)
+            rotateY(0deg)
+            translateZ(0);
+    opacity: 1;
+  }
+};
+
+@-webkit-keyframes slide {
+  0% {
+    margin-left: -148px;
+    -webkit-transform:
+            perspective(800px)
+            rotateY(-90deg)
+            translateZ(0);
+    transform:
+            perspective(800px)
+            rotateY(-90deg)
+            translateZ(0);
+    opacity: 0;
+  }
+  to {
+    margin-left:0;
+    -webkit-transform:
+            perspective(800px)
+            rotateY(0deg)
+            translateZ(0);
+    transform:
+            perspective(800px)
+            rotateY(0deg)
+            translateZ(0);
+    opacity: 1;
+  }
+}

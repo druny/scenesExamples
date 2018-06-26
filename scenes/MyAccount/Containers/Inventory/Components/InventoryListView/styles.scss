@@ -1,0 +1,18 @@
+@import "../../../../../../styles/colors";
+
+.inventoryView {
+  position: relative;
+  margin-right: -16px;
+
+  & .row {
+    padding-left: -16px;
+    padding-right: -16px;
+  }
+  & .skinInventoryView {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 18px;
+    padding: 0;
+  }
+}

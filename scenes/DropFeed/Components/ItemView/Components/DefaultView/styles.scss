@@ -1,0 +1,15 @@
+@import "../../../../../../styles/colors";
+
+.mainView {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-right: 1px solid $primary-color;
+
+  height: 102px;
+}
+
+.imgView {
+  max-height: 74px;
+  max-width: 90px;
+}

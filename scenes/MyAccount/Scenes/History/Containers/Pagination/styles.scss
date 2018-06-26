@@ -1,0 +1,51 @@
+@import "../../../../../../styles/colors";
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 24px;
+
+  .numbersView {
+    margin: 0 25px;
+  }
+
+  & .current,
+  & .next {
+    padding: 0;
+    border: 1px solid transparent;
+    border-radius: 2px;
+    margin-right: 8px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    & p {
+      font-size: 13px;
+      font-weight: bold;
+      margin: 2px 8px;
+    }
+  }
+  & .current {
+    color: $secondary-color;
+    border: 1px solid $secondary-color;
+  }
+  & .next {
+    color: rgba(255, 255, 255, .7);
+    border: 1px solid rgba(255, 255, 255, .3);
+  }
+
+  .pageArrows {
+    cursor: pointer;
+    height: 12px;
+    background: url("./images/arrow@2x.png") no-repeat center;
+  }
+
+  .prevPage {
+    transform: rotate(-90deg);
+  }
+  .nextPage {
+    transform: rotate(90deg);
+  }
+}

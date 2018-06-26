@@ -1,0 +1,209 @@
+@import "../../../../styles/colors";
+
+.mainView {
+  display: flex;
+  position: relative;
+  background-color: $primary-dark-color;
+  border: 1px solid $primary-light-color;
+  box-shadow:
+    0 4px 5px 0 rgba(0, 0, 0, .14),
+    0 1px 10px 0 rgba(0, 0, 0, .12),
+    0 2px 4px 0 rgba(0, 0, 0, .2);
+  border-radius: 2px;
+  padding: 10px;
+  margin-right: 8px;
+  margin-bottom: 8px;
+  justify-content: center;
+  align-items: center;
+  width: 102px;
+  height: 80px;
+
+  &:hover {
+    border-radius: 2px;
+  }
+
+  & .dotView {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+
+    width: 4px;
+    height: 4px;
+    border-radius: 4px;
+    background-color: #2261FB;
+  }
+  & .imageView {
+    max-width: 80px;
+    max-height: 64px;
+    margin: 0 auto;
+  }
+  & .countView {
+    position: absolute;
+    bottom: 8px;
+    left: 8px;
+
+    text-transform: uppercase;
+    font-size: 10px;
+    line-height: 11px;
+    font-weight: bold;
+    opacity: .3;
+  }
+}
+.hoveredView {
+  justify-content: center !important;
+  align-items: center !important;
+  padding: 24px 16px !important;
+  padding-bottom: 4px !important;
+  border: 1px solid $primary-light-color !important;
+  background-color: $content-dark-color !important;
+  box-shadow:
+    0 8px 10px 1px rgba(0, 0, 0, .14),
+    0 3px 14px 3px rgba(0, 0, 0, .12),
+    0 4px 5px 0 rgba(0, 0, 0, .2) !important;
+  opacity: 1 !important;
+
+  &::before {
+    border-bottom-color: $primary-light-color !important;
+  }
+  &::after {
+    border-bottom-color: $content-dark-color !important;
+  }
+
+  & .cornerView {
+    position: absolute;
+    top: -6px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: 0 auto;
+    transform: rotate(45deg);
+    border-left: 1px solid $primary-light-color;
+    border-top: 1px solid $primary-light-color;
+    width: 10px;
+    height: 10px;
+
+    background-color: $content-dark-color;
+    box-shadow:
+      0 8px 10px 1px rgba(0, 0, 0, .14),
+      0 3px 14px 3px rgba(0, 0, 0, .12),
+      0 4px 5px 0 rgba(0, 0, 0, .2);
+  }
+
+  & .headerHoverView {
+    display: grid;
+    grid-template-columns: repeat(1, minMax(370px, 400px));
+    text-align: center;
+
+    & .headerTitleView {
+      font-size: 15px;
+      line-height: 24px;
+      font-weight: bold;
+      text-transform: uppercase;
+      margin: 0;
+    }
+    & .headerCountView {
+      font-size: 13px;
+      line-height: 24px;
+      color: rgba(255, 255, 255, .7);
+      background-color: rgba(25, 52, 87, .3);
+      padding: 4px 12px;
+      margin: 0;
+      margin-top: 8px;
+    }
+  }
+
+  & .contentHoverView {
+    display: flex;
+    flex-flow: column wrap;
+    margin-top: 20px;
+
+    & .contentHoverItemView {
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: space-between;
+      border-top: 1px solid #172231;
+      font-size: 13px;
+      line-height: 20px;
+      height: 18px;
+      padding: 12px 0;
+      padding-bottom: 26px;
+
+      & .itemNameView {
+        width: 50%;
+      }
+      & .itemValueView {
+        opacity: .7;
+      }
+      & .itemPriceView {
+
+      }
+    }
+  }
+}
+
+.radial-gradient-immortal:hover {
+  border: 1px solid #f1c37d;
+}
+.radial-gradient-common:hover {
+  border: 1px solid #afafaf;
+  background-image: radial-gradient(
+    50% 50%,
+    rgba(175, 175, 175, .40) 10%,
+    rgba(175, 175, 175, .20) 50%,
+    rgba(175, 175, 175, 0) 90%
+  );
+}
+.radial-gradient-uncommon:hover {
+  border: 1px solid #87c7ff;
+  background-image: radial-gradient(
+    50% 50%,
+    rgba(135, 199, 255, .40) 10%,
+    rgba(135, 199, 255, .20) 50%,
+    rgba(135, 199, 255, 0) 90%
+  );
+}
+.radial-gradient-rare:hover {
+  border: 1px solid #4B69FF;
+  background-image: radial-gradient(
+    50% 50%,
+    rgba(34, 97, 251, .40) 10%,
+    rgba(34, 97, 251, .20) 50%,
+    rgba(34, 251, 251, 0) 90%
+  );
+}
+.radial-gradient-mythical:hover {
+  border: 1px solid #8847FF;
+  background-image: radial-gradient(
+    50% 50%,
+    rgba(136, 71, 255, .40) 10%,
+    rgba(136, 71, 255, .20) 50%,
+    rgba(136, 71, 255, .00) 90%
+  );
+}
+.radial-gradient-legendary:hover {
+  border: 1px solid #D32CE6;
+  background-image: radial-gradient(
+    50% 50%,
+    rgba(211, 44, 230, .40) 10%,
+    rgba(211, 44, 230, .20) 50%,
+    rgba(211, 44, 230, .00) 90%
+  );
+}
+.radial-gradient-ancient:hover {
+  border: 1px solid #EB4B4B;
+  background-image: radial-gradient(
+    50% 50%,
+    rgba(235, 75, 75, .40) 10%,
+    rgba(235, 75, 75, .20) 50%,
+    rgba(235, 75, 75, .00) 90%
+  );
+}
+.radial-gradient-exceedinglyrare:hover {
+  border: 1px solid #ffd700;
+  background-image: radial-gradient(
+    50% 50%,
+    rgba(255, 215, 0, .40) 10%,
+    rgba(255, 215, 0, .20) 50%,
+    rgba(255, 215, 0, .00) 90%
+  );
+}

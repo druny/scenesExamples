@@ -1,0 +1,24 @@
+.mainView {
+  width: 100%;
+}
+
+.buttonContent {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 50px;
+
+  &:hover {
+    & .buttonImage {
+      color: #FFF;
+    }
+  }
+
+  & .buttonImageDefault {
+    margin-right: 6px;
+  }
+
+  & .buttonText {
+    margin: 0;
+  }
+}

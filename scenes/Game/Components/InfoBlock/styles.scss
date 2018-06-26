@@ -1,0 +1,37 @@
+@import "../../../../styles/colors";
+
+.mainView {
+  position: relative;
+  border: 1px solid $primary-light-color;
+  border-radius: 2px;
+  background-color: $content-dark-color;
+  padding: 12px 0;
+  text-align: center;
+  margin: 16px 0;
+
+  & .descriptionView {
+    color: #FFF;
+    font-size: 13px;
+    line-height: 20px;
+    margin: 0;
+  }
+
+  & .borderView {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    box-sizing: border-box;
+    height: 24px;
+    width: 2px;
+    margin: auto;
+    border: 1px solid #8847FF;
+  }
+
+  & .leftBorderView {
+    left: -2px;
+  }
+
+  & .rightBorderView {
+    right: -2px;
+  }
+}

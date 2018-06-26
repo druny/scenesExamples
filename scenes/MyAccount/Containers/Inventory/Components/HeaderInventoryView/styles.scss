@@ -1,0 +1,101 @@
+@import "../../../../../../styles/colors";
+
+.headerView {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 18px 20px;
+  margin: -29px -20px;
+  margin-bottom: 24px;
+
+  & h2, p {
+    margin: 0;
+  }
+}
+
+.mainHeaderView {
+  background-color: $content-dark-color;
+}
+
+.leftView {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 50%;
+
+  & .titleView {
+    font-size: 15px;
+    line-height: 24px;
+    font-weight: bold;
+    margin-right: 16px;
+  }
+}
+.rightView {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: 50%;
+
+  & .sellAllButtonView {
+
+    & .sellAllButtonContentView {
+      font-size: 14px;
+      padding: 10px 12px;
+      font-weight: bold;
+      line-height: 16px;
+      margin: 0;
+    }
+  }
+}
+.showAllButtonView {
+  margin-left: 8px;
+
+  & .showAllButtonContentView {
+    font-size: 10px;
+    line-height: 16px;
+    font-weight: bold;
+    opacity: .7;
+    margin: 0;
+  }
+}
+.subTitleView {
+  font-size: 13px;
+  line-height: 20px;
+  color: rgba(255, 255, 255, .38);
+}
+.skinFilterView {
+  color: rgba(255, 255, 255, .7);
+  background-color: transparent;
+  border-color: transparent;
+  font-size: 13px;
+  line-height: 15px;
+}
+
+.inventoryView {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+
+  display: flex;
+  position: relative;
+  flex-direction: row;
+  flex-wrap: wrap;
+
+  & .skinInventoryView {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin-right: 16px;
+    margin-bottom: 16px;
+  }
+}
+
+.showingInfoView {
+  display: inline-block;
+  width: 100px;
+  color: rgba(255, 255, 255, .38);
+  font-size: 12px;
+  line-height: 16px;
+  margin-right: 8px;
+}

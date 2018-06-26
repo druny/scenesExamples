@@ -1,0 +1,35 @@
+@import "../../../../../../../../styles/breakpoints";
+
+.mainView {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: url("./images/GametypeBackgroud.png") 100% 100% no-repeat;
+  color: #FFF;
+  margin-bottom: 8px;
+
+  //@include for-phone-only {
+  //  margin-right: 0;
+  //}
+  //@include for-tablet-portrait-up {
+  //  margin-right: 0;
+  //}
+  //@include for-tablet-portrait-only {
+  //  margin-right: 0;
+  //}
+  //@include for-tablet-landscape-up {
+  //  margin-right: 16px;
+  //}
+  //@include for-desktop-up {
+  //  margin-right: 24px;
+  //}
+  //@include for-big-desktop-up {
+  //  margin-right: 24px;
+  //}
+
+  & img {
+    margin: 8px;
+    height: 32px;
+    width: 100px;
+  }
+}

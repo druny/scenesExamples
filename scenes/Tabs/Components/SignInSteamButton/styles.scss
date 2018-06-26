@@ -1,0 +1,14 @@
+.mainView {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px 16px;
+
+  & .imageView {
+    padding-right: 15px;
+  }
+  & .textView {
+    display: inline-block;
+    margin: 4px 0;
+  }
+}

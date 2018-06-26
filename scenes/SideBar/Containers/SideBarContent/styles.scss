@@ -1,0 +1,26 @@
+@import "../../../../styles/colors";
+
+.mainView {
+  padding: 0;
+}
+
+.logoView {
+  padding: 31px 50px;
+  background-color: $primary-dark-color;
+  margin-bottom: 16px;
+  height: 101.5px;
+
+  & img {
+    max-width: 100%;
+  }
+}
+
+.contentSideBarView {
+  padding: 16px 24px;
+  padding-bottom: 34px;
+}
+
+.bonusesButtonView {
+  max-width: 202px;
+  margin: auto;
+}

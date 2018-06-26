@@ -1,0 +1,16 @@
+@import "../../../../../../styles/colors";
+
+.mainView {
+  background-color: $primary-light-color;
+  text-align: center;
+  width: 100%;
+  opacity: .7;
+  
+  .contentView {
+    color: #FFF;
+    font-size: 15px;
+    line-height: 17px;
+    padding: 32px 0;
+    margin: 0;
+  }
+}

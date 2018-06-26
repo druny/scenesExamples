@@ -1,0 +1,51 @@
+@import "../../../../styles/colors";
+
+.mainView {
+  font-family: Play;
+  list-style-type: none;
+  position: relative;
+  padding-left: 0;
+  margin-top: 26px;
+
+  icon {
+    line-height: 24px;
+    margin: 0 18px 0 0;
+    float: left;
+    width: 20px;
+    text-align: center;
+    font-size: 20px;
+  }
+  & .menuItem {
+    text-decoration: none;
+    margin: 0 0 16px;
+    vertical-align: middle;
+  }
+  & .menuItemContent {
+    position: relative;
+    display: flex;
+    align-items: center;
+    color: #FFF;
+    font-size: 13px;
+    font-weight: 400;
+    text-transform: uppercase;
+    text-decoration: none;
+    line-height: 24px;
+
+    &:hover {
+      color: $secondary-color;
+    }
+  }
+  & .menuItemContentImage {
+    width: 16px;
+    margin-right: 10px;
+    margin-bottom: -3px;
+  }
+  & .menuItemContentText {
+    margin: 0;
+    padding: 0;
+    letter-spacing: 0.8px;
+  }
+  & .menuItemContentActive {
+    color: $secondary-color;
+  }
+}

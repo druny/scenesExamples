@@ -1,0 +1,52 @@
+@import "../../../../styles/colors";
+
+.mainView {
+  position: relative;
+  padding: 24px 78px;
+  text-align: center;
+  background-color: $content-dark-color;
+
+  & .titleView {
+    font-size: 15px;
+    line-height: 24px;
+    margin: 0;
+    margin-bottom: 8px;
+  }
+  & .countView {
+    font-size: 24px;
+    line-height: 30px;
+    font-weight: bold;
+    margin: 0;
+  }
+}
+
+.borderContainer {
+  position: absolute;
+  width: 16px;
+  height: 16px;
+}
+
+.borderLeftTop {
+  left: -2px;
+  top: -2px;
+  border-left: 2px solid $secondary-color;
+  border-top: 2px solid $secondary-color;
+}
+.borderLeftBottom {
+  left: -2px;
+  bottom: -2px;
+  border-left: 2px solid $secondary-color;
+  border-bottom: 2px solid $secondary-color;
+}
+.borderRightTop {
+  right: -2px;
+  top: -2px;
+  border-right: 2px solid $secondary-color;
+  border-top: 2px solid $secondary-color;
+}
+.borderRightBottom {
+  right: -2px;
+  bottom: -2px;
+  border-right: 2px solid $secondary-color;
+  border-bottom: 2px solid $secondary-color;
+}

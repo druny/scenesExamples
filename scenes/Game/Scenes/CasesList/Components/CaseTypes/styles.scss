@@ -1,0 +1,53 @@
+@import "../../../../../../styles/colors";
+
+.mainView {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 2px;
+  background-color: $primary-dark-color;
+  padding: 16px 24px;
+  margin-bottom: 12px;
+
+  & .linksView {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    & .imageView {
+      width: 70%;
+    }
+  }
+
+  & .titleView {
+    color: #FFF;
+    font-size: 15px;
+    font-weight: bold;
+    line-height: 17px;
+  }
+
+  & .buttonView {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+    width: 120px;
+    margin-right: 16px;
+    border: 1px solid #FFF;
+    border-radius: 2px;
+    background-color: rgba(0, 0, 0, .12);
+
+    &:hover {
+      border-color: $secondary-color;
+    }
+
+    p {
+      color: #FFF;
+      text-transform: uppercase;
+    }
+  }
+
+  & .buttonViewActive {
+    border-color: $secondary-color !important;
+  }
+}

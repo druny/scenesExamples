@@ -1,0 +1,25 @@
+@import "../../../../styles/colors";
+
+.mainView {
+  display: block;
+  width: 100%;
+  max-width: 200px;
+  background-color: $content-dark-color;
+  border: 1px solid $primary-light-color;
+  border-radius: 2px;
+  padding: 8px 12px;
+
+  & .textView {
+    float: left;
+    color: $secondary-color;
+    font-size: 15px;
+    line-height: 24px;
+    margin: 0;
+    font-family: Play;
+  }
+  & .imageView {
+    color: $secondary-color;
+    float: right;
+    font-size: 25px;
+  }
+}

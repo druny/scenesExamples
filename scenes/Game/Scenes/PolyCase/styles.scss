@@ -1,0 +1,8 @@
+.mainView {
+  font-family: Play;
+  margin: 20px 0;
+
+  & .contentView {
+    width: 100%;
+  }
+}

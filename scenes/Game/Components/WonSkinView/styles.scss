@@ -1,0 +1,597 @@
+@import "../../../../styles/colors";
+
+.mainView {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  flex-flow: column nowrap;
+  animation: scale;
+  animation-duration: 1s;
+  transition: 1s;
+  overflow: hidden;
+  z-index: 99;
+
+  & .centerBackground {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    width: 560px;
+    animation: fadeId 1s forwards;
+  }
+
+  & .scaleAnimation {
+    text-align: center;
+    animation: scale .5s cubic-bezier(.38, .01, 1, .71);
+    z-index: 0;
+  }
+
+  & .titleView {
+    text-align: center;
+
+    & .titleViewMain {
+      font-size: 15px;
+      line-height: 24px;
+      font-weight: bold;
+      color: #CF4444;
+      text-shadow: 0 2px 8px rgba(0, 0, 0, .3);
+      margin: 0;
+      margin-bottom: 8px;
+    }
+    & .titleViewSecondary {
+      color: rgba(255, 255, 255, .7);
+      font-size: 12px;
+      line-height: 16px;
+      text-transform: uppercase;
+      margin: 0;
+    }
+  }
+
+  & .imageWrapper {
+    top: -28px;
+    width: 200px;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: scale .5s linear;
+    z-index: 9;
+  }
+
+  & .imageView {
+    max-width: 106px;
+  }
+
+  & .foregroundImage {
+    position: absolute;
+    height: 100%;
+    width: 50%;
+    filter: blur(1px);
+    background: url("./images/CaseRevealWhite.png") center center / 100% no-repeat;
+    animation: scaleRotate 1s linear;
+    z-index: 0;
+  }
+
+  & .buttonsView {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 24px;
+    z-index: 1;
+
+    & .sellButtonView {
+      margin-right: 16px;
+
+      & .sellButtonContentView {
+        padding: 6px 38px;
+        font-size: 14px;
+        line-height: 20px;
+        font-weight: bold;
+        margin: 0;
+      }
+    }
+    & .closeButtonView {
+      border: 2px solid #FFF;
+      border-radius: 5px;
+
+      & .closeButtonContentView {
+        padding: 6px 33px;
+        font-size: 14px;
+        font-weight: bold;
+        line-height: 20px;
+        color: #FFF;
+        margin: 0;
+      }
+    }
+  }
+
+  & .bottomContentView {
+    font-size: 12px;
+    line-height: 16px;
+    color: #FFF;
+    margin-top: 24px;
+    opacity: .7;
+  }
+
+  & .titleTextView {
+    color: #FFF;
+    font-size: 34px;
+    font-weight: bold;
+    line-height: 39px;
+    letter-spacing: 1px;
+    text-shadow: 0 0 15px rgba(255, 255, 255, .5);
+    margin: 0;
+    margin-bottom: 20px;
+  }
+
+  & .demoModeFlag {
+    font-size: 12px;
+    line-height: 16px;
+    font-weight: bold;
+    color: rgba(255,255,255,0.7);
+    text-align: center;
+    margin: 0;
+    margin-bottom: 12px;
+    text-transform: uppercase;
+    opacity: .7;
+  }
+
+  & .demoPriceView {
+    color: $secondary-color;
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 24px;
+    margin-top: 0;
+  }
+}
+
+.overlayView {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, .7);
+  filter: blur(1px);
+}
+
+.layerDashCircleView {
+  position: absolute;
+  top: -26px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  animation: rotate 12s infinite;
+}
+
+.topView {
+  position: absolute;
+  top: -515px;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 150px;
+  margin: auto;
+}
+
+.bottomView {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: -450px;
+  right: 0;
+  width: 100%;
+  height: 150px;
+  margin: auto;
+}
+
+.skinValueView {
+  margin-top: 50px;
+  margin: auto;
+  color: $secondary-color;
+  font-size: 42px;
+
+  .skinValueTitle {
+    color: #FFF;
+    font-size: 13px;
+    margin-top: 20px;
+  }
+}
+
+.demoModeView {
+  color: #FFF;
+  font-size: 12px;
+  margin-top: 8px;
+  text-transform: uppercase;
+}
+
+.profitView {
+  font-size: 12px;
+  margin-top: 8px;
+  color: $positive-color;
+}
+
+
+.skinInfoWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  & .skinInfo {
+    visibility: hidden;
+    text-align: center;
+    padding: 14px;
+    margin: 0 15px;
+    animation: fadeIn 1s forwards;
+    animation-timing-function: linear;
+    background: linear-gradient(
+      90deg,
+      transparent 0%,
+      #13233D 25%,
+      #1C2F4C 50%,
+      #13233D 75%,
+      transparent 100%
+    );
+    color: #FFF;
+    opacity: .5;
+
+    & .skinInfoTitle {
+      font-weight: bold;
+      text-shadow: 0 2px 8px rgba(0, 0, 0, .3);
+      font-size: 15px;
+      line-height: 24px;
+      margin-bottom: 4px;
+    }
+    & .skinInfoGrade {
+      font-size: 12px;
+      margin-top: 0;
+      opacity: .7;
+    }
+  }
+}
+
+.shapeBorderWrapper {
+  display: inline-block;
+  width: 15px;
+  transform: translateX(150px);
+  animation: translate .6s  forwards;
+  animation-timing-function: linear;
+
+  & .defaultStyles {
+    width: 2px;
+    height: 30px;
+    background-color: #2A3B53;
+  }
+  & .topShape {
+    transform: rotate(45deg) translate(11px, -3px);
+  }
+  & .middleShape {
+    background-color: #9B5EAF;
+  }
+  & .bottomShape {
+    transform: rotate(-45deg) translate(11px, 3px);
+  }
+}
+
+.shapeBorderWrapperRotated {
+  margin-left: 15px;
+  transform: translateX(-150px);
+  animation: translateRotate .6s forwards;
+  animation-timing-function: linear;
+
+  & .topShape {
+    transform: rotate(-45deg) translate(-11px, -3px);
+  }
+  & .bottomShape {
+    transform: rotate(45deg) translate(-11px, 3px);
+  }
+}
+
+.mockedWidth {
+  text-align: center;
+  width: 350px;
+}
+
+.priceView {
+  display: inline-block;
+  position: relative;
+  margin: 0 22px;
+
+  & span {
+    font-size: 22px;
+    position: absolute;
+    left: -18px;
+    top: 4px;
+  }
+}
+
+@mixin on-circle($item-count, $circle-size, $item-size) {
+  position: absolute;
+  top: -61px;
+  left: 21px;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+  padding: 0;
+  list-style: none;
+  border-radius: 50%;
+  width:  $circle-size;
+  height: $circle-size;
+  transform: rotate(-90deg);
+  animation: $item-count * 1s;
+  animation-name: fadeIn;
+
+  > * {
+    display: block;
+    visibility: hidden;
+    position: absolute;
+    top:  50%;
+    left: 50%;
+    margin: -($item-size / 2);
+    width:  $item-size;
+    height: $item-size;
+
+    $angle: (360 / $item-count);
+    $rot: 0;
+
+    @for $i from 1 through $item-count {
+      $firstStep: $i >= $item-count / 1.4;
+
+      &:nth-of-type(#{$i}) {
+        animation-play-state: paused;
+        transform: rotate($rot * 1deg) translate($circle-size / 2.4) rotate(89deg);
+        animation: fadeIn $i / 16 * 1s forwards;
+
+        @if ($firstStep) {
+          animation: fadeIn $i / 15.6 * 1s forwards;
+          animation-timing-function: cubic-bezier(0,1.21,0,1.04);
+        } @else {
+          animation: fadeIn $i / 16 * 1s forwards;
+          animation-timing-function: cubic-bezier(1,-0.03,1,0);
+        }
+      }
+
+      $rot: $rot + $angle;
+    }
+  }
+}
+
+.circle-container {
+  @include on-circle($item-count: 46, $circle-size: 14em, $item-size: 2.8em);
+
+  li {
+    width: 8px;
+    height: 22px;
+    background: linear-gradient(179deg, #021F3C 0%, #00668B 20%, #06F9FA 100%);
+    border-radius: 2px;
+
+    &:hover {
+      filter: grayscale(0);
+    }
+  }
+}
+
+.arrowView {
+  position: relative;
+  display: inline-block;
+  height: 32px;
+  width: 15px;
+
+  & .defaultStyles {
+    box-sizing: border-box;
+    height: 20px;
+    width: 1px;
+    border: 1px solid #03446a;
+  }
+  & .arrowShapeTop {
+    transform: rotate(130deg) translateY(-6px);
+  }
+  & .arrowShapeBottom {
+    transform: rotate(-130deg) translateY(6px);
+  }
+}
+.arrowViewLeft {
+  position: relative;
+  display: inline-block;
+  height: 32px;
+  width: 15px;
+
+  & .defaultStyles {
+    box-sizing: border-box;
+    height: 20px;
+    width: 1px;
+    border: 1px solid #03446a;
+  }
+  & .arrowShapeTop {
+    transform: rotate(-130deg) translateY(-6px);
+  }
+  & .arrowShapeBottom {
+    transform: rotate(130deg) translateY(6px);
+  }
+}
+
+@-webkit-keyframes fadeIn {
+  90% {
+    visibility: hidden;
+  }
+  100% {
+    visibility: visible;
+    opacity: 1;
+  }
+}
+@keyframes fadeIn {
+  90% {
+    visibility: hidden;
+  }
+  100% {
+    visibility: visible;
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes rotate {
+  from {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  20% {
+    -webkit-transform: rotate(30deg);
+    transform: rotate(30deg);
+  }
+  to {
+    -webkit-transform: rotate(-30deg);
+    transform: rotate(-30deg);
+  }
+}
+@keyframes rotate {
+  from {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  20% {
+    -webkit-transform: rotate(30deg);
+    transform: rotate(30deg);
+  }
+  to {
+    -webkit-transform: rotate(-30deg);
+    transform: rotate(-30deg);
+  }
+}
+
+@-webkit-keyframes scale {
+  0% {
+    -webkit-transform: scale(.2);
+    transform: scale(.2);
+    opacity: .7;
+  }
+  to {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes scale {
+  0% {
+    -webkit-transform: scale(.2);
+    transform: scale(.2);
+    opacity: .7;
+  }
+  to {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes scaleRotate {
+  0% {
+    -webkit-transform: scale(.3) rotate(0deg);
+    transform: scale(.3) rotate(0deg);
+    opacity: .7;
+  }
+
+  to {
+    -webkit-transform: scale(1) rotate(-180deg);
+    transform: scale(1) rotate(-180deg);
+    opacity: 1;
+  }
+}
+
+@keyframes scaleRotate {
+  0% {
+    -webkit-transform: scale(.3) rotate(0deg);
+    transform: scale(.3) rotate(0deg);
+    opacity: .7;
+  }
+  to {
+    -webkit-transform: scale(1) rotate(-180deg);
+    transform: scale(1) rotate(-180deg);
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes translate {
+  0% {
+    transform: translateX(150px);
+    opacity: 0;
+  }
+  30% {
+    transform: translateX(100px);
+    opacity: .6;
+  }
+  50% {
+    transform: translateX(70px);
+    opacity: .7;
+  }
+  100% {
+    transform: translateX(0px);
+    opacity: 1;
+  }
+}
+@keyframes translate {
+  0% {
+    transform: translateX(150px);
+    opacity: 0;
+  }
+  30% {
+    transform: translateX(100px);
+    opacity: .6;
+  }
+  50% {
+    transform: translateX(70px);
+    opacity: .7;
+  }
+  100% {
+    transform: translateX(0px);
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes translateRotate {
+  0% {
+    transform: translateX(-150px);
+    opacity: 0;
+  }
+  30% {
+    transform: translateX(-100px);
+    opacity: .6;
+  }
+  50% {
+    transform: translateX(-70px);
+    opacity: .7;
+  }
+  100% {
+    transform: translateX(0px);
+    opacity: 1;
+  }
+}
+@keyframes translateRotate {
+  0% {
+    transform: translateX(-150px);
+    opacity: 0;
+  }
+  30% {
+    transform: translateX(-100px);
+    opacity: .6;
+  }
+  50% {
+    transform: translateX(-70px);
+    opacity: .7;
+  }
+  100% {
+    transform: translateX(0px);
+    opacity: 1;
+  }
+}

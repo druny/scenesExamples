@@ -1,0 +1,712 @@
+@import "../../../../styles/colors";
+
+.game-field {
+  border: 0;
+  margin: 0;
+  position: relative;
+  z-index: 2;
+  padding: 15px;
+}
+
+.cardWrapper {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  -webkit-font-smoothing: antialiased;
+  margin: 0;
+  border: 0;
+  box-shadow: 0 0 6px 1px rgba(0, 0, 0, .2);
+  border-radius: 2px;
+  background: linear-gradient(-179deg, #03214E 0%, #021A3D 100%);
+
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.game-field ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: -ms-flexbox;
+  display: flex;
+  justify-content: center;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+.game-field .cardWrapper {
+  height: 100%;
+  position: relative;
+  -webkit-font-smoothing: antialiased;
+}
+
+.game-field .cardWrapper:before {
+  content: "";
+  display: block;
+  padding-top: 81%;
+}
+
+.game-field ul li {
+  counter-increment: myCounter;
+  display: inline-block;
+  cursor: pointer;
+  margin: 2px;
+}
+
+.game-field ul li:hover {
+  background: rgba(1,12,30,0.8);
+}
+
+.game-field .cardWrapper .card {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  z-index: 4;
+}
+
+.game-field .cardFace {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+
+.pulse-one:hover > .pulse-two {
+  animation: border-pulsate 2.0s infinite;
+}
+
+.game-field .cardFace.front {
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.game-field ul li .front span {
+  font-size: 16px;
+  font-family: 'Play', sans-serif;
+  transiton: all 0.3s;
+  transform: scale(1,1);
+}
+
+.game-field .cardFace.front div {
+  height: 38px;
+  width: 50px;
+  line-height: 38px;
+  font-size: 16px;
+  font-family: 'Play', sans-serif;
+  transiton: all 0.3s;
+  transform: scale(1,1);
+}
+
+.game-field .cardFace.front span {
+  margin: auto;
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 2px;
+  border: 1px solid rgba(255,255,255,0.7);
+  color: #fff;
+  font-size: 16px;
+  font-weight: 700;
+  background: rgba(0,0,0,.2);
+  pointer-events: none;
+  transition: 1s;
+  
+  &:hover {
+    border-color: $secondary-color;
+  }
+}
+
+.game-field .cardFace.front span:before,
+.game-field .cardFace.front div:before {
+  content: counter(myCounter);
+}
+
+.game-field .cardFace.front div:after {
+  content: "";
+  width: 52px;
+  height: 52px;
+  border: 1px solid $primary-light-color;
+  border-radius: 100%;
+  position: absolute;
+  left: -7px;
+  top: -7px;
+}
+
+.game-field ul li .front div  {
+  height: 30px;
+  width: 30px;
+  line-height: 30px;
+  font-size: 13px;
+
+  &:after {
+    height: 42px;
+    width: 54px;
+  }
+}
+// Revealed Start
+
+.game-field .cardWrapper.active .back div {
+  background: radial-gradient(circle, #1A3E71 0%, #021D46 100%);
+  box-shadow: inset 0 1px 11px 0 rgba(0,0,0,0.5);
+  border: 1px solid $secondary-color;
+  border-radius: 2px;
+}
+
+.game-field .cardWrapper.non-active .back div {
+  border: 1px solid transparent;
+}
+
+.game-field .cardWrapper.active .back div:after, .game-field .cardWrapper.active .back div:before {
+  z-index: 2;
+  content: "";
+  position: absolute;
+  border: 5px solid transparent;
+}
+
+.game-field .card > .back {
+  padding: 0;
+  background: transparent;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+}
+
+.game-field .cardFace.back div {
+  display: block;
+  height: 100%;
+  width: 100%;
+  background-color: #021D46;
+  border-radius: 2px;
+  font-style: normal;
+  position: relative;
+  overflow: hidden;
+  box-shadow:
+    0 4px 5px 0 rgba(0, 0, 0, .14),
+    0 1px 10px 0 rgba(0, 0, 0, .12),
+    0 2px 4px 0 rgba(0, 0, 0, .2);
+}
+
+.game-field .cardWrapper .back div img {
+  max-height: 80%;
+  max-width: 100%;
+  position: absolute;
+  margin: auto;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  font-size: 0;
+}
+
+.game-field.g10x10 ul li .back div img {
+  max-height: 70%;
+}
+
+.game-field .cardWrapper .back .rarity-cell {
+  position: absolute;
+  right: 4px;
+  top: 4px;
+  width: 4px;
+  height: 4px;
+  line-height: 25px;
+  font-weight: 600;
+  border-radius: 50px;
+  z-index: 9999;
+}
+
+.game-field.g10x10 ul li .back .rarity-cell {
+  right: 4px;
+  top: 4px;
+}
+
+.tl2:before {
+  position: static;
+  top: 0;
+  left: 0;
+  display: block;
+}
+
+.tl2:before, .tl:before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: transparent;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.game-field .cardWrapper .back .exterior-cell {
+  position: absolute;
+  left: 4px;
+  bottom: 0px;
+  line-height: 16px;
+  font-weight: 600;
+  font-size: 10px;
+  height: 20px;
+  color: rgba(255, 255, 255, .5);
+  padding-top: 4px;
+}
+
+.game-field.g10x10 .cardWrapper .back .exterior-cell {
+  position: absolute;
+  left: 5px;
+  bottom: 0px;
+  line-height: 15px;
+  font-weight: 600;
+  font-size: 10px;
+  padding-top: 4px;
+  color: #FFF;
+  z-index: 9999;
+  opacity: .5;
+}
+
+.game-field .cardWrapper .back .number-cell {
+  position: absolute;
+  left: 2px;
+  top: 1px;
+  background-color: #021531;
+  height: 12px;
+  width: 19px;
+  line-height: 12px;
+  font-weight: bold;
+  font-size: 8px;
+  color: rgba(255,255,255,0.5);
+  border-radius: 2px 0 2px 0;
+  text-align: center;
+}
+
+.game-field.g10x10 ul li .back .number-cell {
+  left: 2px;
+  top: 1px;
+  height: 12px;
+  width: 19px;
+  line-height: 12px;
+  font-size: 8px;
+}
+
+.game-field .cardWrapper .back .price-cell {
+  position: absolute;
+  right: 4px;
+  bottom: 0px;
+  line-height: 16px;
+  font-weight: 600;
+  font-size: 10px;
+  letter-spacing: .5px;
+  height: 20px;
+  text-align: right;
+  color: #FFF;
+  padding-top: 4px;
+}
+
+.game-field.g10x10 ul li .back .price-cell {
+  font-size: 10px;
+  bottom: 0px;
+  right: 4px;
+}
+
+.game-field .cardWrapper .back .price-cell.won {
+  color: $secondary-color;
+  font-weight: 700;
+}
+
+.game-field.g10x10 ul li .back .price-cell.won {
+  font-size: 10px;
+  bottom: 0px;
+  right: 5px;
+  padding-top: 4px;
+}
+
+// Revealed End
+
+// HoveredView Start
+
+.hoveredView {
+  min-width: 198px !important;
+  background-color: #010711 !important;
+  text-align: center !important;
+  padding: 12px 0 !important;
+  color: #FFF !important;
+  border: 1px solid $primary-light-color !important;
+
+  &::before {
+    border-top-color: $primary-light-color !important;
+  }
+  &::after {
+    border-top-color: $content-dark-color !important;
+  }
+
+  & .headerTitleView {
+    font-size: 13px;
+    line-height: 20px;
+    font-weight: bold;
+    margin: 0;
+    margin-bottom: 4px;
+  }
+  & .headerCountView {
+    font-size: 12px;
+    line-height: 16px;
+    text-transform: uppercase;
+    margin: 0;
+  }
+}
+
+/* Hover animation for cell cards */
+.hvr-rectangle-out {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  position: relative;
+  background: linear-gradient(-179deg, #03214E 0%, #021A3D 100%);
+  -webkit-transition-property: color;
+  transition-property: color;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+}
+.hvr-rectangle-out:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #009D9A;
+  -webkit-transform: scale(0);
+  transform: scale(0);
+  -webkit-transition-property: transform;
+  transition-property: transform;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+}
+.hvr-rectangle-out:hover, .hvr-rectangle-out:focus, .hvr-rectangle-out:active {
+  color: white;
+}
+.card:hover {
+  &:hover {
+    & span {
+      border-color: $secondary-color;
+      color: $secondary-color;
+      transition: 1s;
+    }
+    
+    & .hoverLine {
+      opacity: 1;
+      transition: 1s;
+    }
+  }
+}
+
+.hoverLine {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  transition: .6s;
+  background-color: $secondary-color;
+  opacity: 0;
+}
+
+.layoutViewDefault {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  -webkit-transform: scale(0);
+  -moz-transform: scale(0);
+  -ms-transform: scale(0);
+  -o-transform: scale(0);
+  transform: scale(0);
+  transition: 1s;
+  background: url("./images/LayerRevlealBackground.png") center center / 100% repeat;
+  background-size: cover;
+  z-index: 9999;
+}
+
+.layoutViewRevealed {
+  -webkit-transform: scale(1);
+  -moz-transform: scale(1);
+  -ms-transform: scale(1);
+  -o-transform: scale(1);
+  transform: scale(1);
+  transition: 1s;
+}
+
+.touchStatusBar {
+  position: absolute;
+  padding: 2px 0;
+  width: 100%;
+  border-radius: 2px;
+  background-color: rgba(255,255,255, 0.4);
+  height: 16px;
+  top: -20px;
+
+  & .touchStatusBarBackground {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    border-radius: 2px;
+    background-color: $secondary-color;
+    animation: loader;
+    animation-duration: 1.5s;
+    animation-timing-function: linear;
+  }
+
+  & p {
+    color: #FFF;
+    font-size: 10px;
+    font-weight: bold;
+    line-height: 12px;
+    text-align: center;
+    z-index: 999;
+
+    position: absolute;
+    top: 2px;
+    left: 0;
+    right: 0;
+  }
+}
+
+.game-field.g2x2,
+.game-field.g3x3,
+.game-field.g4x4 {
+  & .cardWrapper .back .exterior-cell {
+    font-size: 18px;
+    bottom: 6px;
+    left: 6px;
+  }
+  & ul li .back {
+    & .number-cell {
+      top: 6px;
+      left: 6px;
+      height: 21px;
+      width: 37px;
+      line-height: 21px;
+      font-size: 14px;
+    }
+    & .rarity-cell {
+      top: 6px;
+      right: 6px;
+      width: 10px;
+      height: 10px;
+    }
+    & .price-cell,
+    & .price-cell.won {
+      font-size: 18px;
+      bottom: 6px;
+      right: 6px;
+    }
+  }
+}
+
+.game-field.g5x5,
+.game-field.g6x6 {
+  & .cardWrapper .back .exterior-cell {
+    font-size: 16px;
+    bottom: 6px;
+    left: 6px;
+  }
+  & ul li .back {
+    & .number-cell {
+      top: 6px;
+      left: 6px;
+      height: 16px;
+      width: 30px;
+      line-height: 16px;
+      font-size: 12px;
+    }
+    & .rarity-cell {
+      top: 6px;
+      right: 6px;
+      width: 8px;
+      height: 8px;
+    }
+    & .price-cell,
+    & .price-cell.won {
+      font-size: 16px;
+      bottom: 6px;
+      right: 6px;
+    }
+  }
+}
+
+.game-field.g7x7,
+.game-field.g8x8 {
+  & .cardWrapper .back .exterior-cell {
+    font-size: 14px;
+    bottom: 4px;
+  }
+  & ul li .back {
+    & .number-cell {
+      height: 14px;
+      width: 27px;
+      line-height: 14px;
+      font-size: 10px;
+    }
+    & .rarity-cell {
+      width: 6px;
+      height: 6px;
+    }
+    & .price-cell,
+    & .price-cell.won {
+      font-size: 14px;
+      bottom: 4px;
+    }
+  }
+}
+
+// HoveredView End
+
+.game-field .cardWrapper.active .back div:after {
+  top: 0;
+  right: 45%;
+  border-top: 6px solid $secondary-color;
+}
+
+.game-field.g6x6 .cardWrapper.active .back div:after {
+  right: 42%;
+  border-width: 10px;
+  border-top-width: 12px;
+}
+
+.game-field.g3x3 .cardWrapper.active .back div:after {
+  border-width: 14px;
+  border-top-width: 16px;
+}
+
+.g10x10 {
+  & ul li {
+    width: calc(92% / 10);
+  }
+  & span {
+    width: 42px;
+    height: 33px;
+  }
+}
+
+.g9x9 {
+  & ul li {
+    width: calc(93% / 9);
+  }
+  & span {
+    width: 47px;
+    height: 36.53px;
+  }
+}
+
+.g8x8 {
+  & ul li {
+    width: calc(93.5% / 8);
+  }
+  & span {
+    width: 47px;
+    height: 36.53px;
+  }
+}
+
+.g7x7 {
+  & ul li {
+    width: calc(94.5% / 7);
+  }
+  & span {
+    width: 52px;
+    height: 40px;
+  }
+}
+
+.g6x6 {
+  & ul li {
+    width: calc(95% / 6);
+  }
+  & span {
+    width: 52px;
+    height: 40px;
+  }
+}
+
+.g5x5 {
+  & ul li {
+    width: calc(95.5% / 5);
+  }
+  & span {
+    width: 62px;
+    height: 48px;
+  }
+}
+
+.g4x4 {
+  & ul li {
+    width: calc(96.5% / 4);
+  }
+  & span {
+    width: 77px;
+    height: 66px;
+  }
+}
+
+.g3x3 {
+  & ul li {
+    width: calc(97.5% / 3);
+  }
+  & span {
+    width: 102px;
+    height: 80px;
+  }
+}
+
+.g2x2 {
+  & ul li {
+    width: calc(97.5% / 2);
+  }
+  & span {
+    width: 153px;
+    height: 120px;
+  }
+}
+
+@keyframes border-pulsate {
+  0%   { border-color: rgba(0, 255, 255, 1); }
+  50% { border-color: rgba(0, 255, 255, 0); }
+  100%   { border-color: rgba(0, 255, 255, 1); }
+}
+
+@-webkit-keyframes loader {
+  0%   { width: 0%; }
+  50% { width: 50%; }
+  100%   { width: 100%; }
+}
+@keyframes loader {
+  0%   { width: 0%; }
+  50% { width: 50%; }
+  100%   { width: 100%; }
+}
+
+@media screen and (max-width: 1427px) {
+  .g10x10 ul li {
+    width: 9%;
+  }
+}

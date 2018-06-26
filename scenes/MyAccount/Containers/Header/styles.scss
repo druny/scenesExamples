@@ -1,0 +1,68 @@
+@import "../../../../styles/colors";
+
+.mainView {
+  display: flex;
+  position: relative;
+  align-items: center;
+  background-color: $primary-dark-color;
+  border-radius: 2px 2px 0 0;
+  padding: 18px 20px;
+
+  & .steamNameView {
+    margin-right: auto;
+
+    &:hover p,
+    &hover icon {
+      color: #FFF;
+    }
+
+    & .steamNameContentView {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    & p, icon {
+      display: inline-block;
+      color: $secondary-color;
+      font-weight: bold;
+      line-height: 12px;
+    }
+    icon {
+      font-size: 12px;
+    }
+    p {
+      font-size: 10px;
+      text-transform: lowercase;
+      margin: 0;
+      margin-right: 9px;
+    }
+  }
+
+  & .logoView {
+    position: absolute;
+    left: calc(50% - 32px);
+    top: -32px;
+    width: 64px;
+    height: 64px;
+    border-radius: 64px;
+    border: 3px solid #0e3369;
+  }
+
+  & .simpleButtons {
+    margin-right: 10px;
+
+    & a {
+      color: #FFF;
+      text-decoration: none;
+    }
+    & p {
+      font-size: 10px;
+      font-weight: bold;
+      line-height: 12px;
+      opacity: .7;
+      margin: 0;
+    }
+  }
+
+}

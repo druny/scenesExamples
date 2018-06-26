@@ -1,0 +1,79 @@
+@import "../../../../styles/colors";
+
+.mainView {
+  background-color: $primary-color;
+  padding: 16px 28px;
+  color: #FFF;
+
+  & .headerView {
+    display: flex;
+    align-items: center;
+    margin-bottom: 16px;
+
+    & .leftPart {
+      display: flex;
+      justify-content: flex-start;
+      width: 50%;
+
+      & .mainTitle {
+        font-size: 15px;
+        line-height: 20px;
+        margin: 0;
+        margin-right: 10px;
+      }
+
+      & .secondaryTitle {
+        font-size: 12px;
+        line-height: 20px;
+        margin: 0;
+        opacity: .38;
+      }
+    }
+
+    & .rightPart {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      width: 50%;
+
+      & .buttonView {
+        float: right;
+
+        & .buttonContent {
+          font-size: 10px;
+          line-height: 16px;
+          font-weight: bold;
+          opacity: .7;
+
+          & p {
+            color: rgba(255,255,255,0.7);
+            font-size: 10px;
+            font-weight: bold;
+            letter-spacing: 0.42px;
+            line-height: 12px;
+            margin: 0;
+          }
+        }
+      }
+    }
+  }
+
+  & .bottomView {
+
+    & .skinsView {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-start;
+      align-items: center;
+    }
+  }
+
+  & .showingInfoView {
+    display: inline-block;
+    width: 100px;
+    color: rgba(255, 255, 255, .38);
+    font-size: 12px;
+    line-height: 16px;
+    margin-right: 8px;
+  }
+}

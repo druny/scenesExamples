@@ -1,0 +1,28 @@
+@import "../../styles/colors";
+@import "../../styles/breakpoints";
+
+.contentView {
+  left: 0 !important;
+
+  @include for-sidebar {
+    left: 250px !important;
+  }
+}
+
+.sideBarView {
+  background-color: #011430;
+  max-width: 250px;
+  z-index: 999 !important;
+}
+
+.overlayView {
+  z-index: 998 !important;
+}
+
+.hiddenOverlayView {
+  display: none !important;
+}
+
+.openButton {
+  display: none;
+}
